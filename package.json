@@ -1,12 +1,13 @@
 {
   "name": "dga-helper",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "yarn lint && yarn tsc"
   },
   "dependencies": {
     "@markushevpro/eslint-config": "^1.0.4",

@@ -11,13 +11,19 @@ export default function DependencyList ({ answers, prepends, onEdit }: IDependen
         $items( extractItems( answers ))
     }, [ answers ])
 
-    return items.map(( item, index ) => (
-        <DependencyItem
-            {...item}
-            key={item.step}
-            backArrow={index < items.length - 1}
-            prepend={prepends?.[ item.step ]}
-            onEdit={onEdit( item.step )}
-        />
-    ))
+    return (
+        <>
+            {
+                items.map(( item, index ) => (
+                    <DependencyItem
+                        {...item}
+                        key={item.step}
+                        backArrow={index < items.length - 1}
+                        prepend={prepends?.[ item.step ]}
+                        onEdit={onEdit( item.step )}
+                    />
+                ))
+            }
+        </>
+    )
 }
