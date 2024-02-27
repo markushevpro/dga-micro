@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "@markushevpro/eslint-config"
+  ],
+  "rules": {
+    "@next/next/no-css-tags": [0],
+    "@next/next/no-img-element": [0],
+    "react-hooks/exhaustive-deps": [0]
+  }
+}

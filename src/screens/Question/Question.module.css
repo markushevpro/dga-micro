@@ -1,0 +1,9 @@
+.placeholder {
+    width: 36px;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        align-items: flex-end !important;
+    }
+}
