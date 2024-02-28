@@ -4,6 +4,7 @@ export interface IResultScreenProps {
     answers: TAnswers
     prepends?: Partial<Record<TQuestionName, string>>
     onEdit: ( step: TQuestionName ) => () => void
+    onReset: () => void
 }
 
 export interface IDependencyListProps {

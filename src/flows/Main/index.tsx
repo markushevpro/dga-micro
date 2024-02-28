@@ -14,6 +14,15 @@ export default function MainFlow () {
     const [ answers, $answers ] = useState<Partial<Record<TQuestionName, string>>>({})
     const [ steps, $steps ] = useState<TQuestions<TQuestion>>({})
 
+    const resetState = () => {
+        $edit( undefined )
+        $result( false )
+        $flow( undefined )
+        $steps({})
+        $answers({})
+        $select( true )
+    }
+
     const showResult = () => {
         $edit( undefined )
         $result( true )
@@ -50,7 +59,12 @@ export default function MainFlow () {
 
     if ( result ) {
         return (
-            <ResultScreen answers={answers} prepends={flows[ flow ?? '' ]?.prepends} onEdit={editAnswer} />
+            <ResultScreen
+                answers={answers}
+                prepends={flows[ flow ?? '' ]?.prepends}
+                onEdit={editAnswer}
+                onReset={resetState}
+            />
         )
     }
 

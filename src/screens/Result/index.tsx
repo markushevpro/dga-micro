@@ -6,9 +6,7 @@ import styles                 from './ResultScreen.module.css'
 import DependencyList         from './lib/DependencyList'
 import { IResultScreenProps } from './lib/types'
 
-export default function ResultScreen ({ answers, prepends, onEdit }: IResultScreenProps ) {
-    const reload = () => window.location.href = '/'
-
+export default function ResultScreen ({ answers, prepends, onEdit, onReset }: IResultScreenProps ) {
     return (
         <Stack
             vertical
@@ -17,7 +15,7 @@ export default function ResultScreen ({ answers, prepends, onEdit }: IResultScre
         >
             <DependencyList answers={answers} prepends={prepends} onEdit={onEdit} />
             <Divider />
-            <Button onClick={reload}>Пройти еще раз</Button>
+            <Button onClick={onReset}>Пройти еще раз</Button>
         </Stack>
     )
 }
