@@ -7,23 +7,24 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "test": "yarn lint && yarn tsc"
+    "test": "yarn lint && yarn tsc",
+    "test-build": "yarn build && cd ./out && ws -p 3000"
   },
   "dependencies": {
-    "@markushevpro/eslint-config": "^1.0.4",
-    "@rsuite/icons": "^1.0.2",
-    "@types/node": "20.1.0",
-    "@types/react": "^18.2.8",
-    "@types/react-dom": "18.2.4",
-    "classnames": "^2.3.2",
-    "echarts": "^5.4.2",
-    "echarts-for-react": "^3.0.2",
-    "eslint": "8.40.0",
-    "eslint-config-next": "13.4.1",
-    "next": "13.4.1",
+    "@rsuite/icons": "1.0.2",
+    "classnames": "2.3.2",
+    "next": "14.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "rsuite": "^5.33.0",
-    "typescript": "5.0.4"
+    "rsuite": "5.33.0"
+  },
+  "devDependencies": {
+    "@markushevpro/eslint-config": "^1.0.4",
+    "@types/node": "^20.1.0",
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.4",
+    "eslint": "^8.40.0",
+    "eslint-config-next": "^13.4.1",
+    "typescript": "^5.0.4"
   }
 }
