@@ -1,5 +1,5 @@
-import { functionize }         from '../helpers'
-import { TFlowConfig, TFlows } from '../types'
+import { createFlowsFromConfig } from '../helpers'
+import { TFlowConfig, TFlows }   from '../types'
 
 import actionFlow   from './action'
 import desireFlow   from './desire'
@@ -9,4 +9,4 @@ import goalTaskFlow from './goal-task'
 
 export const flowsConfig: TFlowConfig[] = [ desireFlow, actionFlow, goalFlow, goalTaskFlow, freeFlow ]
 
-export const flows: TFlows = functionize( flowsConfig )
+export const flows: TFlows = createFlowsFromConfig( flowsConfig )

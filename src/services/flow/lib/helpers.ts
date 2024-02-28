@@ -1,29 +1,51 @@
-import { TAnswers, TFlowConfig, TFlows, TQuestion } from './types'
+import { TAnswers, TFlow, TFlowConfig, TFlows, TQuestion, TQuestionDraft, TQuestionName, TQuestionTextHandler, TQuestions } from './types'
 
-//TODO: Refactor
-export function functionize ( raw: TFlowConfig[]) {
-    const res: any = {}
+export function convertQuestionStringsToFunctions ( question: TQuestionDraft ): TQuestion {
+    const res: TQuestion = { placeholder: () => '' }
+
+    Object.keys( question ).forEach( key => {
+        const typedKey = key as keyof TQuestion
+        const value = question[ typedKey ]
+
+        res[ typedKey ] = ( typeof value === 'string' )
+            ? () => value
+            : value as TQuestionTextHandler
+    })
+
+    return res
+}
+
+export function createFlowQuestions ( questions: TQuestions<TQuestionDraft> ): TQuestions<TQuestion> {
+    const res: TQuestions<TQuestion> = {}
+
+    Object.keys( questions ).forEach( step => {
+        const name = step as TQuestionName
+        const question = questions[ name ] as TQuestionDraft
+
+        res[ name ] = convertQuestionStringsToFunctions( question )
+    })
+
+    return res
+}
+
+export function createFlowFromConfig ( config: TFlowConfig ): TFlow {
+    const res: TFlow = {
+        ...config,
+        questions: createFlowQuestions( config.questions )
+    }
+
+    return res
+}
+
+export function createFlowsFromConfig ( raw: TFlowConfig[]) {
+    const res: TFlows = {}
 
     raw.forEach( config => {
         const flow = config.name
-        res[ flow ] = {
-            ...config,
-            questions: { ...config.questions }
-        }
-
-        Object.keys( res[ flow ].questions ).forEach( step => {
-            Object.keys( res[ flow ].questions[ step ]).forEach( key => {
-                const
-                    value = res[ flow ].questions[ step ][ key ]
-
-                if ( typeof value === 'string' ) {
-                    res[ flow ].questions[ step ][ key ] = () => value
-                }
-            })
-        })
+        res[ flow ] = createFlowFromConfig( config )
     })
 
-    return res as TFlows
+    return res
 }
 
 export function extractQuestionStrings ( question: TQuestion | undefined, answers: TAnswers ) {
