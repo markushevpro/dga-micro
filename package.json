@@ -1,10 +1,10 @@
 {
   "name": "dga-helper",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "test": "yarn lint && yarn tsc",
@@ -24,7 +24,7 @@
     "@types/react": "^18.2.8",
     "@types/react-dom": "^18.2.4",
     "eslint": "^8.40.0",
-    "eslint-config-next": "^13.4.1",
+    "eslint-config-next": "^14.1.0",
     "typescript": "^5.0.4"
   }
 }
