@@ -1,6 +1,10 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
-export default function Document () {
+import type { ReactNode } from 'react'
+
+export default function Document
+(): ReactNode
+{
     return (
         <Html className="rs-theme-dark" lang="en">
             <Head>

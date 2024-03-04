@@ -1,6 +1,7 @@
-import { TAnswers, allQuestions } from '@/services/flow'
+import { allQuestions } from '@/services/flow'
 
-import { IResultItem } from './types'
+import type { IResultItem } from './types'
+import type { TAnswers }    from '@/services/flow'
 
 export const extractItems = ( answers: TAnswers ): IResultItem[] => {
     return allQuestions

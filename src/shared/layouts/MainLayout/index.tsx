@@ -1,6 +1,8 @@
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren, ReactNode } from 'react'
 
-export default function MainLayout ({ children }: PropsWithChildren ) {
+export default function MainLayout
+({ children }: PropsWithChildren ): ReactNode
+{
     return (
         <div className="center-container" style={{ width: '100%' }}>
             { children }

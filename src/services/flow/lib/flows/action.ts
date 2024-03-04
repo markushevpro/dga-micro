@@ -1,11 +1,11 @@
-import { TAnswers, TFlowConfig } from '../types'
+import type { TAnswers, TFlowConfig } from '@/services/flow/lib/types'
 
 const actionFlow: TFlowConfig = {
     name:        'action',
     title:       'У меня есть задача',
     description: 'но мне не хватает мотивации',
     apperance:   'primary',
-    prepends:    { milestone: 'Я стану к этому ближе, когда смогу', },
+    prepends:    { milestone: 'Я стану к этому ближе, когда смогу' },
     questions:   {
         milestone: {
             before:      'Мне нужно',

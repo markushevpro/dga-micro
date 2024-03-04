@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react'
 
-import QuestionScreen                                       from '@/screens/Question'
-import { TQuestionName, TQuestion, extractQuestionStrings } from '@/services/flow'
+import QuestionScreen             from '@/screens/Question'
+import { extractQuestionStrings } from '@/services/flow'
 
-import { findStep }            from './lib/helpers'
-import { IQuestionsFlowProps } from './lib/types'
+import { findStep } from './lib/helpers'
 
-export default function QuestionsFlow ({ steps, answers, onAnswer, onFinish }: IQuestionsFlowProps ) {
+import type { IQuestionsFlowProps }      from './lib/types'
+import type { TQuestionName, TQuestion } from '@/services/flow'
+import type { ReactNode }                from 'react'
+
+export default function QuestionsFlow
+({ steps, answers, onAnswer, onFinish }: IQuestionsFlowProps ): ReactNode
+{
     const [ first, $first ] = useState<TQuestionName>()
     const [ step, $step ] = useState<TQuestionName>()
     const [ current, $current ] = useState<TQuestion>()
 
-    const nextStep = () => {
+    const nextStep = (): void => {
         const next = findStep( steps, step, 1 )
 
         if ( !next ) {
@@ -22,10 +27,10 @@ export default function QuestionsFlow ({ steps, answers, onAnswer, onFinish }: I
         $step( next )
     }
 
-    const prevStep = () => {
+    const prevStep = (): void => {
         const prev = findStep( steps, step, -1 )
 
-        if ( !!prev ) {
+        if ( prev ) {
             $step( prev )
         }
     }
@@ -38,7 +43,7 @@ export default function QuestionsFlow ({ steps, answers, onAnswer, onFinish }: I
         const first = Object.keys( steps )[ 0 ] as TQuestionName
 
         $first( first )
-        $step( step ?? first )
+        $step( s => s ?? first )
     }, [ steps ])
 
     return (

@@ -1,10 +1,10 @@
-import { TypeAttributes } from 'rsuite/esm/@types/common'
+import type { TypeAttributes } from 'rsuite/esm/@types/common'
 
 export type TQuestionName = 'desire' | 'goal' | 'milestone' | 'step' | 'task' | 'action'
 
 export type TQuestionTextHandler = ( answers: TAnswers ) => string
 
-export type TQuestionStruct<T> = {
+export interface TQuestionStruct<T> {
     before?: T
     after?: T
     placeholder: T

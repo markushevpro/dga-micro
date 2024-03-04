@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "yarn lint && yarn tsc",
+    "test": "yarn lint --fix && yarn tsc",
     "test-build": "yarn build && cd ./out && ws -p 3000"
   },
   "dependencies": {
@@ -19,7 +19,7 @@
     "rsuite": "5.33.0"
   },
   "devDependencies": {
-    "@markushevpro/eslint-config": "^1.0.4",
+    "@markushevpro/eslint-config": "^1.0.15",
     "@types/node": "^20.1.0",
     "@types/react": "^18.2.8",
     "@types/react-dom": "^18.2.4",

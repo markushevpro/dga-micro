@@ -1,5 +1,6 @@
-import { prepends }    from '../const'
-import { TFlowConfig } from '../types'
+import { prepends } from '@/services/flow/lib/const'
+
+import type { TFlowConfig } from '@/services/flow/lib/types'
 
 const freeFlow: TFlowConfig = {
     name:        'free',

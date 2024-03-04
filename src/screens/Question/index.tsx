@@ -3,10 +3,14 @@ import { IconButton, Input } from 'rsuite'
 
 import Stack from '@/shared/layouts/Stack'
 
-import styles                   from './Question.module.css'
-import { IQuestionScreenProps } from './lib/types'
+import styles from './Question.module.css'
 
-export default function QuestionScreen ({ first, before, after, placeholder, value, onAnswer, onPrevious, onNext }: IQuestionScreenProps ) {
+import type { IQuestionScreenProps } from './lib/types'
+import type { ReactNode }            from 'react'
+
+export default function QuestionScreen
+({ first, before, after, placeholder, value, onAnswer, onPrevious, onNext }: IQuestionScreenProps ): ReactNode
+{
     return (
         <Stack className={styles.container} spacing={10}>
             {

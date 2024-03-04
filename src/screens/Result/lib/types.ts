@@ -1,4 +1,4 @@
-import { TAnswers, TQuestionName } from '@/services/flow'
+import type { TAnswers, TQuestionName } from '@/services/flow'
 
 export interface IResultScreenProps {
     answers: TAnswers

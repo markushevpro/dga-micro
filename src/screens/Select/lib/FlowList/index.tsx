@@ -1,10 +1,13 @@
+import FlowItem        from '@/screens/Select/lib/FlowItem'
 import { flowsConfig } from '@/services/flow/lib/flows'
 import Stack           from '@/shared/layouts/Stack'
 
-import FlowItem           from '../FlowItem'
-import { IFlowListProps } from '../types'
+import type { IFlowListProps } from '@/screens/Select/lib/types'
+import type { ReactNode }      from 'react'
 
-export default function FlowList ({ children, onSelect }: IFlowListProps ) {
+export default function FlowList
+({ children, onSelect }: IFlowListProps ): ReactNode
+{
     return (
         <Stack vertical spacing={30}>
             {

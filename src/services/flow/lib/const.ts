@@ -1,4 +1,4 @@
-import { TQuestionName } from './types'
+import type { TQuestionName } from './types'
 
 export const allQuestions: TQuestionName[] = [ 'desire', 'goal', 'milestone', 'step', 'task', 'action' ]
 

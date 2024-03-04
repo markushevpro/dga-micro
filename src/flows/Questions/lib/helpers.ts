@@ -1,4 +1,4 @@
-import { TQuestion, TQuestionName, TQuestions } from '@/services/flow'
+import type { TQuestion, TQuestionName, TQuestions } from '@/services/flow'
 
 export const findStep = ( steps: TQuestions<TQuestion>, current: TQuestionName | undefined, offset: number ): false | TQuestionName => {
     if ( !current ) {
@@ -6,9 +6,9 @@ export const findStep = ( steps: TQuestions<TQuestion>, current: TQuestionName |
     }
 
     const
-        keys = Object.keys( steps ),
-        index = keys.indexOf( current ),
-        search = index + offset
+        keys = Object.keys( steps )
+    const index = keys.indexOf( current )
+    const search = index + offset
 
     if ( search >= keys.length || search < 0 ) {
         return false

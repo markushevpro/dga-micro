@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react'
 
-import DependencyItem                        from '../DependencyItem'
-import { extractItems }                      from '../helpers'
-import { IResultItem, IDependencyListProps } from '../types'
+import DependencyItem   from '@/screens/Result/lib/DependencyItem'
+import { extractItems } from '@/screens/Result/lib/helpers'
 
-export default function DependencyList ({ answers, prepends, onEdit }: IDependencyListProps ) {
+import type { IResultItem, IDependencyListProps } from '@/screens/Result/lib/types'
+import type { ReactNode }                         from 'react'
+
+export default function DependencyList
+({ answers, prepends, onEdit }: IDependencyListProps ): ReactNode
+{
     const [ items, $items ] = useState<IResultItem[]>([])
 
     useEffect(() => {

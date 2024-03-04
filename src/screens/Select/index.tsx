@@ -1,9 +1,13 @@
 import { ArowBack } from '@rsuite/icons'
 
-import FlowList                   from './lib/FlowList'
-import { ISelectFlowScreenProps } from './lib/types'
+import FlowList from './lib/FlowList'
 
-export default function SelectFlowScreen ({ onSelect }: ISelectFlowScreenProps ) {
+import type { ISelectFlowScreenProps } from './lib/types'
+import type { ReactNode }              from 'react'
+
+export default function SelectFlowScreen
+({ onSelect }: ISelectFlowScreenProps ): ReactNode
+{
     return (
         <>
             <p>Выбери вопрос</p>

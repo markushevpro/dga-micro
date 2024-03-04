@@ -1,6 +1,5 @@
-import { PropsWithChildren } from 'react'
-
-import { TFlowInfo } from '@/services/flow'
+import type { TFlowInfo }         from '@/services/flow'
+import type { PropsWithChildren } from 'react'
 
 export type flowSelectHandler = ( name: string ) => () => void
 

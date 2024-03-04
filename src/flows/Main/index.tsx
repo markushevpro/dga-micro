@@ -1,12 +1,19 @@
+/* eslint-disable max-statements */
+// TODO: Refactor
 import { useState } from 'react'
 
-import QuestionsFlow                                                           from '@/flows/Questions'
-import QuestionScreen                                                          from '@/screens/Question'
-import ResultScreen                                                            from '@/screens/Result'
-import SelectFlowScreen                                                        from '@/screens/Select'
-import flows, { TQuestion, TQuestionName, TQuestions, extractQuestionStrings } from '@/services/flow'
+import QuestionsFlow                     from '@/flows/Questions'
+import QuestionScreen                    from '@/screens/Question'
+import ResultScreen                      from '@/screens/Result'
+import SelectFlowScreen                  from '@/screens/Select'
+import flows, { extractQuestionStrings } from '@/services/flow'
 
-export default function MainFlow () {
+import type { TQuestion, TQuestionName, TQuestions } from '@/services/flow'
+import type { ReactNode }                            from 'react'
+
+export default function MainFlow
+(): ReactNode
+{
     const [ select, $select ] = useState<boolean>( true )
     const [ result, $result ] = useState<boolean>( false )
     const [ edit, $edit ] = useState<TQuestionName>()
@@ -14,7 +21,7 @@ export default function MainFlow () {
     const [ answers, $answers ] = useState<Partial<Record<TQuestionName, string>>>({})
     const [ steps, $steps ] = useState<TQuestions<TQuestion>>({})
 
-    const resetState = () => {
+    const resetState = (): void => {
         $edit( undefined )
         $result( false )
         $flow( undefined )
@@ -23,7 +30,7 @@ export default function MainFlow () {
         $select( true )
     }
 
-    const showResult = () => {
+    const showResult = (): void => {
         $edit( undefined )
         $result( true )
     }

@@ -1,6 +1,8 @@
-import { TAnswers, TFlow, TFlowConfig, TFlows, TQuestion, TQuestionDraft, TQuestionName, TQuestionTextHandler, TQuestions } from './types'
+import type { TAnswers, TFlow, TFlowConfig, TFlows, TQuestion, TQuestionDraft, TQuestionName, TQuestionStruct, TQuestionTextHandler, TQuestions } from './types'
 
-export function convertQuestionStringsToFunctions ( question: TQuestionDraft ): TQuestion {
+function convertQuestionStringsToFunctions
+( question: TQuestionDraft ): TQuestion
+{
     const res: TQuestion = { placeholder: () => '' }
 
     Object.keys( question ).forEach( key => {
@@ -15,12 +17,14 @@ export function convertQuestionStringsToFunctions ( question: TQuestionDraft ): 
     return res
 }
 
-export function createFlowQuestions ( questions: TQuestions<TQuestionDraft> ): TQuestions<TQuestion> {
+function createFlowQuestions
+( questions: TQuestions<TQuestionDraft> ): TQuestions<TQuestion>
+{
     const res: TQuestions<TQuestion> = {}
 
     Object.keys( questions ).forEach( step => {
         const name = step as TQuestionName
-        const question = questions[ name ] as TQuestionDraft
+        const question = questions[ name ] as TQuestion
 
         res[ name ] = convertQuestionStringsToFunctions( question )
     })
@@ -28,7 +32,9 @@ export function createFlowQuestions ( questions: TQuestions<TQuestionDraft> ): T
     return res
 }
 
-export function createFlowFromConfig ( config: TFlowConfig ): TFlow {
+function createFlowFromConfig
+( config: TFlowConfig ): TFlow
+{
     const res: TFlow = {
         ...config,
         questions: createFlowQuestions( config.questions )
@@ -37,7 +43,9 @@ export function createFlowFromConfig ( config: TFlowConfig ): TFlow {
     return res
 }
 
-export function createFlowsFromConfig ( raw: TFlowConfig[]) {
+export function createFlowsFromConfig
+( raw: TFlowConfig[]): TFlows
+{
     const res: TFlows = {}
 
     raw.forEach( config => {
@@ -48,10 +56,12 @@ export function createFlowsFromConfig ( raw: TFlowConfig[]) {
     return res
 }
 
-export function extractQuestionStrings ( question: TQuestion | undefined, answers: TAnswers ) {
+export function extractQuestionStrings
+( question: TQuestion | undefined, answers: TAnswers ): TQuestionStruct<string>
+{
     return {
         after:       question?.after?.( answers ),
         before:      question?.before?.( answers ),
-        placeholder: question?.placeholder?.( answers )
+        placeholder: question?.placeholder?.( answers ) ?? ''
     }
 }

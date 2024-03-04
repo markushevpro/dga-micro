@@ -1,15 +1,18 @@
-//TODO: Refactor
+// TODO: Refactor
 import { Edit, ArowBack }          from '@rsuite/icons'
 import { FlexboxGrid, IconButton } from 'rsuite'
 
 import { prepends } from '@/services/flow'
 import Stack        from '@/shared/layouts/Stack'
 
-import { IDependencyItemProps } from '../types'
-
 import styles from './DependencyItem.module.css'
 
-export default function DependencyItem ({ step, value, backArrow, prepend, onEdit }: IDependencyItemProps ) {
+import type { IDependencyItemProps } from '@/screens/Result/lib/types'
+import type { ReactNode }            from 'react'
+
+export default function DependencyItem
+({ step, value, backArrow, prepend, onEdit }: IDependencyItemProps ): ReactNode
+{
     return (
         <Stack
             vertical
