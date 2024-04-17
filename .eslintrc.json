@@ -3,8 +3,18 @@
     "next/core-web-vitals",
     "@markushevpro/eslint-config"
   ],
-  "rules": {
+  "rules": {    
     "@next/next/no-css-tags": [0],
-    "@next/next/no-img-element": [0]
-  }
+    "key-spacing": [0],
+    "no-multi-spaces": [0],
+    "@typescript-eslint/key-spacing": ["error", { "beforeColon": false, "afterColon": true, "align": "value" }]
+  },
+  "overrides": [
+    {
+      "files": ["index.tsx", "_app.tsx", "_document.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [0]
+      }
+    }
+  ]
 }

@@ -1,0 +1,19 @@
+.container {
+    white-space: nowrap;
+    width:      100%;
+}
+
+.container > :global(.rs-stack-item) {
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        white-space: normal;
+    }
+
+    .container :global(.rs-flex-box-grid-item) {
+        width: 100%;
+        text-align: center;
+    }
+}
