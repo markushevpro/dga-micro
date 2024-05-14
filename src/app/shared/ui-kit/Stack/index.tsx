@@ -6,7 +6,7 @@ import { Stack as RStack } from 'rsuite'
 import styles from './stack.module.css'
 
 interface IStackProps
-    extends PropsWithChildren
+extends PropsWithChildren
 {
     className?:      string
     vertical?:       boolean

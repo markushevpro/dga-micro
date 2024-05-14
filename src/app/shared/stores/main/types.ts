@@ -22,4 +22,4 @@ interface IMainStoreActions {
 
 export
 interface IMainStore
-    extends IMainStoreData, IMainStoreActions {}
+extends IMainStoreData, IMainStoreActions {}

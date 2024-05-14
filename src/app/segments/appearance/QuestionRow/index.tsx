@@ -6,7 +6,7 @@ import SpacedText    from '~/shared/ui-kit/SpacedText'
 import Stack         from '~/shared/ui-kit/Stack'
 
 interface IQuestionRowProps
-    extends TQuestionStruct<string | undefined>, IQuestionInputProps
+extends TQuestionStruct<string | undefined>, IQuestionInputProps
 {}
 
 export default

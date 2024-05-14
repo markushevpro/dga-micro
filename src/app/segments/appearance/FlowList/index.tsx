@@ -6,7 +6,7 @@ import { flowsConfig } from '~/services/flow/lib/flows'
 import Stack           from '~/shared/ui-kit/Stack'
 
 interface IFlowListProps
-    extends PropsWithChildren
+extends PropsWithChildren
 {
     onSelect: TFlowSelectHandler
 }

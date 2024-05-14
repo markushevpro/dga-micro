@@ -1,6 +1,6 @@
 import type { UseBoundStore, StoreApi } from 'zustand'
 
-import { extractMap, getKeys, excludeMap } from '@/app/shared/lib/utils/objects'
+import { extractMap, getKeys, excludeMap } from '~/shared/lib/utils/objects'
 
 type TStoreHook<T> = () => T
 type TZustandHook<T> = UseBoundStore<StoreApi<T>>

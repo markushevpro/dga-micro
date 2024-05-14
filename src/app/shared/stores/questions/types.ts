@@ -19,4 +19,4 @@ interface IQuestionStoreActions {
 
 export
 interface IQuestionsStore
-    extends IQuestionStoreData, IQuestionStoreActions {}
+extends IQuestionStoreData, IQuestionStoreActions {}

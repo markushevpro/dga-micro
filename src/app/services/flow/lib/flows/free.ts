@@ -1,6 +1,6 @@
 import type { TFlowConfig } from '~/services/flow/lib/types'
 
-import { defaultPrepends } from '@/app/services/flow/lib/const'
+import { defaultPrepends } from '~/services/flow/lib/const'
 
 const freeFlow: TFlowConfig = {
     name:        'free',
