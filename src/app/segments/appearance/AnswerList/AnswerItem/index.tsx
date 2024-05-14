@@ -9,7 +9,7 @@ import Stack         from '~/shared/ui-kit/Stack'
 import styles from './answer-item.module.css'
 
 interface IAnswerItemProps
-extends IResultItem
+    extends IResultItem
 {
     last?:   boolean
     prepend: string

@@ -43,21 +43,21 @@ interface TFlowInfo
 
 export
 interface TFlowStruct<T>
-extends TFlowInfo
+    extends TFlowInfo
 {
     questions: TQuestions<T>
 }
 
 export
 interface TFlowConfig
-extends TFlowStruct<TQuestionDraft>
+    extends TFlowStruct<TQuestionDraft>
 {
     name: string
 }
 
 export
 interface TFlow
-extends TFlowStruct<TQuestion>
+    extends TFlowStruct<TQuestion>
 {}
 
 export

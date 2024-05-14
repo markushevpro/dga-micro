@@ -1,4 +1,4 @@
-import type { TFlowConfig } from '~/services/flow/lib/types'
+import type { TFlowConfig } from '..'
 
 const planFlow: TFlowConfig = {
     name:        'plan',

@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react'
 
-import AnswerItem           from '~/segments/appearance/AnswerItem'
 import { getPrepend }       from '~/services/flow'
 import { useMainStoreData } from '~/shared/stores/main'
 
+import AnswerItem        from './AnswerItem'
 import { useAnswerList } from './hooks/useAnswerList'
 
 export default

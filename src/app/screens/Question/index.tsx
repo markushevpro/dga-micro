@@ -8,6 +8,7 @@ import Stack       from '~/shared/ui-kit/Stack'
 
 import styles from './question-screen.module.css'
 
+// TODO Should not have props
 interface IQuestionScreenProps
     extends TQuestionStruct<string | undefined>
 {

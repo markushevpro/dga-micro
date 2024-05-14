@@ -1,4 +1,4 @@
-import type { TAnswers, TFlowConfig } from '~/services/flow/lib/types'
+import type { TAnswers, TFlowConfig } from '..'
 
 const goalFlow: TFlowConfig = {
     name:        'goal',

@@ -5,7 +5,7 @@ import { Button } from 'rsuite'
 import Stack from '~/shared/ui-kit/Stack'
 
 interface IFlowItemProps
-extends TFlowInfo
+    extends TFlowInfo
 {
     onClick: () => void
 }

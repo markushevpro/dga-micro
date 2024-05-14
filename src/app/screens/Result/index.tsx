@@ -20,7 +20,10 @@ function ResultScreen
         >
             <AnswerList />
             <Divider />
-            <Button onClick={reset}>Пройти еще раз</Button>
+
+            <Button onClick={reset}>
+                Пройти еще раз
+            </Button>
         </Stack>
     )
 }
