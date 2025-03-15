@@ -27,6 +27,7 @@ jobs:
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      continue-on-error: true
       with:
         local-dir: ./out/
         server: ${{ secrets.FTP_HOST }}
