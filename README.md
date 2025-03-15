@@ -11,13 +11,13 @@
 <br />
 
 <p align="center">
-![Static Badge](https://img.shields.io/badge/React-Next.js-blue)
-![Static Badge](https://img.shields.io/badge/UFO-Architecture-green)
-![GitHub License](https://img.shields.io/github/license/markushevpro/dga-micro)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/markushevpro/dga-micro/main.yml)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/markushevpro/dga-micro)
-![GitHub top language](https://img.shields.io/github/languages/top/markushevpro/dga-micro)
-![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fdga-micro.nw-lab.com%2F)
+    <img alt="Static Badge" src="https://img.shields.io/badge/React-Next.js-blue" />
+    <img alt="Static Badge" src="https://img.shields.io/badge/UFO-Architecture-green" />
+    <img alt="GitHub License" src="https://img.shields.io/github/license/markushevpro/dga-micro" />
+    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/markushevpro/dga-micro/main.yml" />
+    <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/markushevpro/dga-micro" />
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/markushevpro/dga-micro" />
+    <img alt="W3C Validation" src="https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fdga-micro.nw-lab.com%2F" />
 </p>
 
 Готовый веб-интерфейс для самомотивации по принципу "Желание-Цель-Действие". Помогает разобраться с мотивацией, найти ответы на вопросы и построить план действий. Имеет несколько наборов вопросов для разных случаев, чтобы помочь собрать мысли.
