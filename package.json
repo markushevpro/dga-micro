@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "yarn lint --fix && yarn tsc",
+    "test:ufo": "node ./tests/ufo-tests.cjs",
     "test-build": "yarn build && cd ./out && ws -p 3000"
   },
   "dependencies": {
