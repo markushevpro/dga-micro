@@ -1,9 +1,9 @@
-import type { AppProps } from 'next/app'
-
 import { CustomProvider } from 'rsuite'
 import 'rsuite/dist/rsuite.min.css'
 
-import '@/app/shared/styles/global.css'
+import '@/shared/styles/global.css'
+
+import type { AppProps } from 'next/app'
 
 export default
 function App

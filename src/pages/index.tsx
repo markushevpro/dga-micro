@@ -1,1 +1,1 @@
-export { default } from '~/entrypoints/Home'
+export { default } from '@/entrypoints/Home'
